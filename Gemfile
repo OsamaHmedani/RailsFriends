@@ -2,7 +2,6 @@ source "https://rubygems.org"
 
 gem "rails", "~> 8.1.3", ">= 8.1.3.1"
 gem "propshaft"
-gem "sqlite3", ">= 2.1"
 gem "puma", ">= 5.0"
 gem "importmap-rails"
 gem "turbo-rails"
@@ -34,8 +33,16 @@ group :development, :test do
 end
 
 group :development do
+
+  gem "sqlite3", ">= 2.1"
+
   gem "web-console"
 end
+
+group :production do
+  gem 'pg', '>= 1.6.3'
+end
+
 
 group :test do
   gem "capybara"
